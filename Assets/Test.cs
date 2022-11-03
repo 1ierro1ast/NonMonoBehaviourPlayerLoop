@@ -1,18 +1,41 @@
 ﻿using NonMonoBehaviourPlayerLoop;
+using NonMonoBehaviourPlayerLoop.Callbacks;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Test : IUpdate, IFixedUpdate
+    public class Test : NonMonoBehaviour, IEarlyUpdate, IPreUpdate, IUpdate, IPreLateUpdate, IPostLateUpdate
     {
-        public void OnUpdate()
+        public Test()
         {
-            Debug.Log("Update");
+            Debug.Log("ctor1");
         }
 
-        public void OnFixedUpdate()
+        public void OnEarlyUpdate()
         {
-            Debug.Log("FixedUpdate");
+            Debug.Log("=======================");
+            Debug.Log(nameof(OnEarlyUpdate));
+        }
+
+        public void OnPreUpdate()
+        {
+            Debug.Log(nameof(OnPreUpdate));
+        }
+
+        public void OnUpdate()
+        {
+            Debug.Log(nameof(OnUpdate));
+        }
+
+        public void OnPreLateUpdate()
+        {
+            Debug.Log(nameof(OnPreLateUpdate));
+        }
+
+        public void OnPostLateUpdate()
+        {
+            Debug.Log(nameof(OnPostLateUpdate));
+            Debug.Log("=======================");
         }
     }
 }

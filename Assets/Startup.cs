@@ -7,7 +7,10 @@ namespace DefaultNamespace
         private Test _test;
         private void Awake()
         {
+            Debug.Log("123");
             _test = new Test();
+
+            gameObject.AddComponent<TestBehaviour>();
         }
     }
 }

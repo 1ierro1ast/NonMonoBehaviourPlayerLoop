@@ -5,7 +5,6 @@ namespace NonMonoBehaviourPlayerLoop
 {
 	public enum UpdateType
 	{
-		// DO NOT CHANGE INDEXES!
 		EarlyUpdate = 2,
 		FixedUpdate = 3,
 		PreUpdate = 4,
